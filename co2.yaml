@@ -1,12 +1,12 @@
 # see https://esphome.io/components/sensor/scd30.html
 ---
-<<: !include nodemcuv2.yaml
+<<: !include .nodemcuv2.yaml
 
 substitutions:
   devicename: co2
 
 sensor:
-  - <<: !include base-sensors.yaml
+  - <<: !include .base-sensors.yaml
   - platform: scd30
     update_interval: 30s
     co2:
