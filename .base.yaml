@@ -30,6 +30,15 @@ mqtt:
   log_topic:
     topic: "espHome-${devicename}/debug"
     retain: false
+  birth_message:
+    topic: "espHome-${devicename}/status"
+    payload: 1
+  will_message:
+    topic: "espHome-${devicename}/status"
+    payload: 0
+  shutdown_message:
+    topic: "espHome-${devicename}/status"
+    payload: 0
 
 captive_portal:
 
