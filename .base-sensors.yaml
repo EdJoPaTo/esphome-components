@@ -1,9 +1,8 @@
 ---
 - platform: wifi_signal
   name: "RSSI"
-  update_interval: 15s
+  update_interval: 10s
   accuracy_decimals: 1
   filters:
-    - exponential_moving_average:
-        alpha: 0.01
-        send_every: 20 # 4 times per min * 5 min
+    - throttle_average: 5min
+    - filter_out: nan

@@ -13,17 +13,18 @@ sensor:
       name: "CO2"
       accuracy_decimals: 1
       filters:
-        - exponential_moving_average:
-            send_every: 4 # 2 times per min * 2 min
+        - filter_out: 0.0
+        - throttle_average: 2min
+        - filter_out: nan
     temperature:
       name: "Temperature"
       accuracy_decimals: 2
       filters:
-        - exponential_moving_average:
-            send_every: 4 # 2 times per min * 2 min
+        - throttle_average: 2min
+        - filter_out: nan
     humidity:
       name: "Humidity"
       accuracy_decimals: 1
       filters:
-        - exponential_moving_average:
-            send_every: 10 # 2 times per min * 5 min
+        - throttle_average: 5min
+        - filter_out: nan
