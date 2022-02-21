@@ -40,4 +40,4 @@ web_server:
     password: !secret web_server_password
 
 sensor:
-  - <<: !include .base-sensors.yaml
+  - <<: !include .sensors-base.yaml

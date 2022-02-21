@@ -6,7 +6,7 @@ substitutions:
   devicename: co2
 
 sensor:
-  - <<: !include .base-sensors.yaml
+  - <<: !include .sensors-base.yaml
   - platform: scd30
     update_interval: 30s
     co2:
