@@ -4,5 +4,7 @@
   update_interval: 10s
   accuracy_decimals: 2
   filters:
-    - throttle_average: 5min
-    - filter_out: nan
+    - exponential_moving_average:
+        alpha: 0.01
+        send_every: 1
+    - heartbeat: 4min
