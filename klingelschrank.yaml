@@ -1,0 +1,21 @@
+---
+<<: !include .nodemcuv2.yaml
+
+substitutions:
+  devicename: klingelschrank
+
+sensor:
+  - <<: !include .sensors-base.yaml
+  - <<: !include .sensors-nodemcuv2-dht.yaml
+
+binary_sensor:
+  - platform: gpio
+    name: "Klingel"
+    pin:
+      number: D2 # connect the other end to GND
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    filters:
+      - delayed_on_off: 100ms
