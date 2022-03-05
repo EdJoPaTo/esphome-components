@@ -1,0 +1,31 @@
+---
+<<: !include .nodemcuv2.yaml
+
+substitutions:
+  devicename: et-bright-white
+
+sensor:
+  - <<: !include .sensors-base.yaml
+  - <<: !include .sensors-nodemcuv2-dht.yaml
+
+switch:
+  - platform: gpio
+    id: "relay0"
+    pin:
+      number: D2
+      inverted: true
+  - platform: gpio
+    id: "relay1"
+    pin:
+      number: D1
+      inverted: true
+  - platform: template
+    name: "Light"
+    lambda: |-
+      return id(relay0).state;
+    turn_on_action:
+      - switch.turn_on: relay0
+      - switch.turn_on: relay1
+    turn_off_action:
+      - switch.turn_off: relay0
+      - switch.turn_off: relay1
