@@ -1,0 +1,11 @@
+# update the devicename or run via
+# esphome -s devicename test run nodemcuv2-dht.yaml
+---
+<<: !include .nodemcuv2.yaml
+
+# substitutions:
+#   devicename: test
+
+sensor:
+  - <<: !include .sensors-base.yaml
+  - <<: !include .sensors-nodemcuv2-dht.yaml
