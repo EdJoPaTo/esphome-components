@@ -26,6 +26,7 @@ mqtt:
   username: !secret mqtt_username
   password: !secret mqtt_password
   discovery: true
+  use_abbreviations: false
   topic_prefix: "espHome-${devicename}"
   log_topic:
     topic: "espHome-${devicename}/debug"
