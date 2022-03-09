@@ -15,8 +15,6 @@
     name: "Humidity"
     accuracy_decimals: 2
     filters:
-      - filter_out: 0.0
-      - filter_out: 100.0
       - exponential_moving_average:
           alpha: 0.05
           send_every: 1
