@@ -8,7 +8,7 @@
     accuracy_decimals: 3
     filters:
       - exponential_moving_average:
-          alpha: 0.02
+          alpha: 0.05
           send_every: 1
       - heartbeat: 2min
   humidity:
@@ -18,6 +18,6 @@
       - filter_out: 0.0
       - filter_out: 100.0
       - exponential_moving_average:
-          alpha: 0.02
+          alpha: 0.05
           send_every: 1
       - heartbeat: 4min
