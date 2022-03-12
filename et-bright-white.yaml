@@ -1,23 +1,25 @@
 ---
-<<: !include .nodemcuv2.yaml
+<<: !include .nodemcuv2-i2c.yaml
 
 substitutions:
   devicename: et-bright-white
+  tcs_gain: 16x
 
 sensor:
   - !include .sensor-wifi-signal.yaml
   - !include .sensor-nodemcuv2-dht.yaml
+  - !include .sensor-tcs34725.yaml
 
 switch:
   - platform: gpio
     id: "relay0"
     pin:
-      number: D2
+      number: D7
       inverted: true
   - platform: gpio
     id: "relay1"
     pin:
-      number: D1
+      number: D5
       inverted: true
   - platform: template
     name: "Light"
