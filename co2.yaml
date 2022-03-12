@@ -14,23 +14,17 @@ sensor:
       accuracy_decimals: 1
       filters:
         - filter_out: 0.0
-        - exponential_moving_average:
-            alpha: 0.2
-            send_every: 1
-        - heartbeat: 2min
+        - throttle_average: 2min
+        - filter_out: nan
     temperature:
       name: "Temperature"
       accuracy_decimals: 3
       filters:
-        - exponential_moving_average:
-            alpha: 0.2
-            send_every: 1
-        - heartbeat: 2min
+        - throttle_average: 2min
+        - filter_out: nan
     humidity:
       name: "Humidity"
       accuracy_decimals: 2
       filters:
-        - exponential_moving_average:
-            alpha: 0.2
-            send_every: 1
-        - heartbeat: 4min
+        - throttle_average: 4min
+        - filter_out: nan
