@@ -5,8 +5,8 @@ substitutions:
   devicename: et-bright-white
 
 sensor:
-  - <<: !include .sensors-base.yaml
-  - <<: !include .sensors-nodemcuv2-dht.yaml
+  - !include .sensor-wifi-signal.yaml
+  - !include .sensor-nodemcuv2-dht.yaml
 
 switch:
   - platform: gpio

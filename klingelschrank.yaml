@@ -5,8 +5,8 @@ substitutions:
   devicename: klingelschrank
 
 sensor:
-  - <<: !include .sensors-base.yaml
-  - <<: !include .sensors-nodemcuv2-dht.yaml
+  - !include .sensor-wifi-signal.yaml
+  - !include .sensor-nodemcuv2-dht.yaml
 
 binary_sensor:
   - platform: gpio

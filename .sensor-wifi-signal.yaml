@@ -1,0 +1,11 @@
+---
+platform: wifi_signal
+name: "RSSI"
+update_interval: 10s
+accuracy_decimals: 2
+filters:
+  - lambda: if (x < 0.0) { return x; } else { return {}; }
+  - exponential_moving_average:
+      alpha: 0.05
+      send_every: 24 # 6 * 4min
+      send_first_at: 6
