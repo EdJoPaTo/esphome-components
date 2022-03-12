@@ -1,0 +1,6 @@
+---
+<<: !include .nodemcuv2.yaml
+
+i2c:
+  sda: 4 # D2
+  scl: 5 # D1

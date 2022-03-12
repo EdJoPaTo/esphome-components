@@ -4,10 +4,6 @@
 esp8266:
   board: nodemcuv2
 
-i2c:
-  sda: 4 # D2
-  scl: 5 # D1
-
 status_led:
   pin:
     number: D4 # Use D0 for the brighter one on the NodeMCU itself

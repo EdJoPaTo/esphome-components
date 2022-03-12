@@ -1,6 +1,6 @@
 # see https://esphome.io/components/sensor/scd30.html
 ---
-<<: !include .nodemcuv2.yaml
+<<: !include .nodemcuv2-i2c.yaml
 
 substitutions:
   devicename: co2
