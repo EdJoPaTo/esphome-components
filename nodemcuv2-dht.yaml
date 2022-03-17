@@ -3,8 +3,8 @@
 ---
 <<: !include .nodemcuv2.yaml
 
-# substitutions:
-#   devicename: test
+substitutions:
+  devicename: dht-default
 
 sensor:
   - !include .sensor-wifi-signal.yaml
