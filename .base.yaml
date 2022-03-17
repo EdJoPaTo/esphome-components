@@ -4,6 +4,7 @@ esphome:
 
 # Enable logging
 logger:
+  #level: INFO # Probably useful for low-power devices
 
 # Home Assistant → nope
 # api:
