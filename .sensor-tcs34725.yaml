@@ -5,16 +5,9 @@ gain: "${tcs_gain}"
 integration_time: 614ms
 illuminance:
   name: "Illuminance"
+  accuracy_decimals: 3
   filters:
     - lambda: if (x >= 0.0) { return x; } else { return {}; }
-    - exponential_moving_average:
-        alpha: 0.3
-        send_every: 12 # 6 * 2min
-        send_first_at: 6
-color_temperature:
-  name: "Color Temperature"
-  filters:
-    - lambda: if (x > 0.0) { return x; } else { return {}; }
     - exponential_moving_average:
         alpha: 0.2
         send_every: 12 # 6 * 2min
