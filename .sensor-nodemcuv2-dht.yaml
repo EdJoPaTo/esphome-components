@@ -7,6 +7,7 @@ temperature:
   name: "Temperature"
   accuracy_decimals: 3
   filters:
+    - filter_out: nan
     - exponential_moving_average:
         alpha: 0.1
         send_every: 12 # 6 * 2min
