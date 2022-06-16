@@ -3,7 +3,6 @@
 
 substitutions:
   devicename: et-bright-white
-  tcs_gain: 16x
 
 sensor:
   - !include .sensor-wifi-signal.yaml

@@ -1,8 +1,6 @@
 ---
 platform: tcs34725
 update_interval: 10s
-gain: "${tcs_gain}"
-integration_time: 614ms
 illuminance:
   name: "Illuminance"
   accuracy_decimals: 3

@@ -3,7 +3,6 @@
 
 substitutions:
   devicename: booksolar
-  tcs_gain: 4x
 
 sensor:
   - !include .sensor-wifi-signal.yaml
