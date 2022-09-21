@@ -1,0 +1,11 @@
+# update the devicename or run via
+# esphome -s devicename test run nodemcuv2-bme280.yaml
+---
+<<: !include .nodemcuv2-i2c.yaml
+
+substitutions:
+  devicename: dht-default
+
+sensor:
+  - !include .sensor-wifi-signal.yaml
+  - !include .sensor-bme280.yaml
