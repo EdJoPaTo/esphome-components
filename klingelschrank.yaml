@@ -6,7 +6,7 @@ substitutions:
 
 sensor:
   - !include .sensor-wifi-signal.yaml
-  - !include .sensor-nodemcuv2-dht.yaml
+  - !include .sensor-nodemcuv2-dht22.yaml
 
 binary_sensor:
   - platform: gpio

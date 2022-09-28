@@ -6,5 +6,5 @@ substitutions:
 
 sensor:
   - !include .sensor-wifi-signal.yaml
-  - !include .sensor-nodemcuv2-dht.yaml
+  - !include .sensor-nodemcuv2-dht22.yaml
   - !include .sensor-tcs34725.yaml

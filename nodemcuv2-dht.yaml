@@ -1,5 +1,5 @@
 # update the devicename or run via
-# esphome -s devicename test run nodemcuv2-dht.yaml
+# esphome -s devicename dht-test run nodemcuv2-dht.yaml
 ---
 <<: !include .nodemcuv2.yaml
 
@@ -8,4 +8,4 @@ substitutions:
 
 sensor:
   - !include .sensor-wifi-signal.yaml
-  - !include .sensor-nodemcuv2-dht.yaml
+  - !include .sensor-nodemcuv2-dht22.yaml
