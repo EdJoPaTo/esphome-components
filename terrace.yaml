@@ -1,10 +1,8 @@
-# update the devicename or run via
-# esphome -s devicename dht-test run nodemcuv2-dht.yaml
 ---
 <<: !include .nodemcuv2.yaml
 
 substitutions:
-  devicename: dht-default
+  devicename: terrace
 
 sensor:
   - !include .sensor-wifi-signal.yaml
