@@ -9,7 +9,7 @@ temperature:
   filters:
     - filter_out: nan
     - exponential_moving_average:
-        alpha: 0.1
+        alpha: 0.05
         send_every: 12 # 6 * 2min
         send_first_at: 6
 humidity:
