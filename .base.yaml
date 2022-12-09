@@ -13,6 +13,8 @@ ota:
   password: !secret ota_password
 
 wifi:
+  # when updating from another name use the ip / hostname for connection
+  #use_address: 192.168.178.666
   networks:
     - ssid: !secret wifi_ssid
       password: !secret wifi_password
