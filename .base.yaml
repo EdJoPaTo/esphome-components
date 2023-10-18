@@ -4,7 +4,7 @@ esphome:
 
 # Enable logging
 logger:
-  level: INFO
+  # level: INFO # default to DEBUG, use INFO for battery operated devices
 
 # Home Assistant → nope
 # api:
