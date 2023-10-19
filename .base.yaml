@@ -12,6 +12,9 @@ logger:
 ota:
   password: !secret ota_password
 
+network:
+  enable_ipv6: true
+
 wifi:
   # when updating from another name use the ip / hostname for connection
   #use_address: 192.168.178.666
