@@ -9,6 +9,7 @@ sensor:
   - !include .sensor-nodemcuv2-dht22.yaml
 
 binary_sensor:
+  - !include .binary-sensor-status.yaml
   - platform: gpio
     name: Klingel
     pin:

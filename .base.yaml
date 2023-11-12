@@ -48,3 +48,6 @@ web_server:
 
 sensor:
   - !include .sensor-wifi-signal.yaml
+
+binary_sensor:
+  - !include .binary-sensor-status.yaml
