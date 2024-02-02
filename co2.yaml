@@ -10,20 +10,20 @@ sensor:
   - platform: scd30
     update_interval: 30s
     co2:
-      name: "CO2"
+      name: CO2
       accuracy_decimals: 1
       filters:
         - filter_out: 0.0
         - throttle_average: 2min
         - filter_out: nan
     temperature:
-      name: "Temperature"
+      name: Temperature
       accuracy_decimals: 3
       filters:
         - throttle_average: 2min
         - filter_out: nan
     humidity:
-      name: "Humidity"
+      name: Humidity
       accuracy_decimals: 2
       filters:
         - throttle_average: 4min

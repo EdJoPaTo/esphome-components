@@ -1,6 +1,6 @@
 ---
 platform: wifi_signal
-name: "RSSI"
+name: RSSI
 update_interval: 10s
 accuracy_decimals: 2
 filters:

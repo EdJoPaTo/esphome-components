@@ -2,7 +2,7 @@
 platform: tcs34725
 update_interval: 10s
 illuminance:
-  name: "Illuminance"
+  name: Illuminance
   accuracy_decimals: 3
   filters:
     - lambda: if (x >= 0.0001) { return x; } else { return {}; }

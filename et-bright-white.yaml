@@ -11,17 +11,17 @@ sensor:
 
 switch:
   - platform: gpio
-    id: "relay0"
+    id: relay0
     pin:
       number: D7
       inverted: true
   - platform: gpio
-    id: "relay1"
+    id: relay1
     pin:
       number: D5
       inverted: true
   - platform: template
-    name: "Light"
+    name: Light
     lambda: |-
       return id(relay0).state;
     turn_on_action:
