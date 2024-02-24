@@ -9,4 +9,4 @@ illuminance:
     - exponential_moving_average:
         alpha: 0.2
         send_every: 12 # 6 * 2min
-        send_first_at: 6
+        send_first_at: 10
