@@ -1,5 +1,5 @@
 ---
-<<: !include .nodemcuv2.yaml
+<<: !include nodemcuv2.yaml
 
 i2c:
   sda: 4 # D2

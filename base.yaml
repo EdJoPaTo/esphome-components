@@ -47,4 +47,4 @@ web_server:
     password: !secret web_server_password
 
 sensor:
-  - !include .sensor-wifi-signal.yaml
+  - !include sensor-wifi-signal.yaml

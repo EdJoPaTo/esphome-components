@@ -1,6 +1,22 @@
-# My ESPHome Configs
+# My ESPHome Components
 
-See <https://esphome.io/> for more info
+This repo contains components used in my device configs.
+
+See <https://esphome.io/> for documentation.
+
+## Example Usage
+
+```yaml
+---
+<<: !include nodemcuv2.yaml
+
+substitutions:
+  devicename: terrace
+
+sensor:
+  - !include sensor-wifi-signal.yaml
+  - !include sensor-nodemcuv2-dht22.yaml
+```
 
 ## Sensor Filter
 

@@ -1,9 +1,0 @@
----
-<<: !include .nodemcuv2.yaml
-
-substitutions:
-  devicename: terrace
-
-sensor:
-  - !include .sensor-wifi-signal.yaml
-  - !include .sensor-nodemcuv2-dht22.yaml

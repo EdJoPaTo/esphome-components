@@ -1,9 +1,0 @@
----
-<<: !include .nodemcuv2-i2c.yaml
-
-substitutions:
-  devicename: entrance
-
-sensor:
-  - !include .sensor-wifi-signal.yaml
-  - !include .sensor-bme280.yaml
