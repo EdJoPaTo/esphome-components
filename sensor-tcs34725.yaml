@@ -5,7 +5,6 @@ illuminance:
   name: Illuminance
   accuracy_decimals: 3
   filters:
-    - lambda: if (x > 0.0) { return x; } else { return {}; }
     - exponential_moving_average:
         alpha: 0.2
         send_every: 12 # 6 * 2min
