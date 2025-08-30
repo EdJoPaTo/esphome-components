@@ -4,14 +4,17 @@ esphome:
 
 # Enable logging
 logger:
-  # level: INFO # default to DEBUG, use INFO for battery operated devices
+  # level: DEBUG # default
+  # level: INFO # use for battery operated devices
+  # level: VERBOSE # use to understand problems?
 
 # Home Assistant → nope
 # api:
 
 ota:
-  platform: esphome
-  password: !secret ota_password
+  - platform: web_server
+  - platform: esphome
+    password: !secret ota_password
 
 network:
   enable_ipv6: true
@@ -32,7 +35,7 @@ mqtt:
   broker: !secret mqtt_broker
   username: !secret mqtt_username
   password: !secret mqtt_password
-  discovery: true
+  discovery_unique_id_generator: mac
   use_abbreviations: false
   topic_prefix: espHome-${devicename}
   log_topic:
@@ -48,4 +51,13 @@ web_server:
     password: !secret web_server_password
 
 sensor:
-  - !include sensor-wifi-signal.yaml
+  - platform: wifi_signal
+    name: RSSI
+    update_interval: 10s
+    accuracy_decimals: 2
+    filters:
+      - lambda: if (x < 0.0) { return x; } else { return {}; }
+      - exponential_moving_average:
+          alpha: 0.05
+          send_every: 24 # 6 * 4min
+          send_first_at: 6

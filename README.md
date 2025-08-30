@@ -8,7 +8,7 @@ See <https://esphome.io/> for documentation.
 
 ```yaml
 ---
-<<: !include nodemcuv2.yaml
+platform: !include nodemcuv2.yaml
 
 substitutions:
   devicename: terrace
