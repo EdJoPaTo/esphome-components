@@ -1,11 +1,12 @@
 ---
 platform: tcs34725
-update_interval: 10s
+update_interval: 5s
 illuminance:
   name: Illuminance
   accuracy_decimals: 3
   filters:
+    - skip_initial: 3 # auto integration time / gain needs a few measurements to adapt on startup
     - exponential_moving_average:
         alpha: 0.2
-        send_every: 12 # 6 * 2min
-        send_first_at: 10
+        send_every: 24 # 12 * 2min
+        send_first_at: 20
