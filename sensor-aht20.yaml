@@ -1,0 +1,22 @@
+# see https://esphome.io/components/sensor/aht10/
+# uses i2c
+---
+platform: aht10
+variant: AHT20
+update_interval: 10s
+temperature:
+  name: Temperature
+  accuracy_decimals: 3
+  filters:
+    - exponential_moving_average:
+        alpha: 0.2
+        send_every: 12 # 6 * 2min
+        send_first_at: 6
+humidity:
+  name: Humidity
+  accuracy_decimals: 2
+  filters:
+    - exponential_moving_average:
+        alpha: 0.2
+        send_every: 24 # 6 * 4min
+        send_first_at: 6
