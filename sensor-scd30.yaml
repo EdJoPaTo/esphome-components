@@ -8,17 +8,23 @@ co2:
   accuracy_decimals: 1
   filters:
     - filter_out: 0.0
-    - throttle_average: 2min
-    - filter_out: nan
+    - exponential_moving_average:
+        alpha: 0.3
+        send_every: 4 # 2 * 2min
+        send_first_at: 2
 temperature:
   name: Temperature
   accuracy_decimals: 3
   filters:
-    - throttle_average: 2min
-    - filter_out: nan
+    - exponential_moving_average:
+        alpha: 0.2
+        send_every: 4 # 2 * 2min
+        send_first_at: 2
 humidity:
   name: Humidity
   accuracy_decimals: 2
   filters:
-    - throttle_average: 4min
-    - filter_out: nan
+    - exponential_moving_average:
+        alpha: 0.2
+        send_every: 8 # 2 * 4min
+        send_first_at: 2
