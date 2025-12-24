@@ -1,30 +1,31 @@
 # see https://esphome.io/components/sensor/scd30.html
 # uses i2c
 ---
-platform: scd30
-update_interval: 30s
-co2:
-  name: CO2
-  accuracy_decimals: 1
-  filters:
-    - filter_out: 0.0
-    - exponential_moving_average:
-        alpha: 0.3
-        send_every: 4 # 2 * 2min
-        send_first_at: 2
-temperature:
-  name: Temperature
-  accuracy_decimals: 3
-  filters:
-    - exponential_moving_average:
-        alpha: 0.2
-        send_every: 4 # 2 * 2min
-        send_first_at: 2
-humidity:
-  name: Humidity
-  accuracy_decimals: 2
-  filters:
-    - exponential_moving_average:
-        alpha: 0.2
-        send_every: 8 # 2 * 4min
-        send_first_at: 2
+sensor:
+  platform: scd30
+  update_interval: 30s
+  co2:
+    name: CO2
+    accuracy_decimals: 1
+    filters:
+      - filter_out: 0.0
+      - exponential_moving_average:
+          alpha: 0.3
+          send_every: 4 # 2 * 2min
+          send_first_at: 2
+  temperature:
+    name: Temperature
+    accuracy_decimals: 3
+    filters:
+      - exponential_moving_average:
+          alpha: 0.2
+          send_every: 4 # 2 * 2min
+          send_first_at: 2
+  humidity:
+    name: Humidity
+    accuracy_decimals: 2
+    filters:
+      - exponential_moving_average:
+          alpha: 0.2
+          send_every: 8 # 2 * 4min
+          send_first_at: 2
