@@ -9,7 +9,7 @@ co2:
   filters:
     - filter_out: 0.0
     - exponential_moving_average:
-        alpha: 0.3
+        alpha: 0.4
         send_every: 4 # 2 * 2min
         send_first_at: 2
 temperature:
@@ -17,7 +17,7 @@ temperature:
   accuracy_decimals: 3
   filters:
     - exponential_moving_average:
-        alpha: 0.2
+        alpha: 0.3
         send_every: 4 # 2 * 2min
         send_first_at: 2
 humidity:
@@ -25,6 +25,6 @@ humidity:
   accuracy_decimals: 2
   filters:
     - exponential_moving_average:
-        alpha: 0.2
+        alpha: 0.3
         send_every: 8 # 2 * 4min
         send_first_at: 2
