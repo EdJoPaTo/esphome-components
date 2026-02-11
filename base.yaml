@@ -59,6 +59,6 @@ sensor:
     filters:
       - lambda: if (x < 0.0) { return x; } else { return {}; }
       - exponential_moving_average:
-          alpha: 0.05
+          alpha: 0.01
           send_every: 24 # 6 * 4min
           send_first_at: 6
