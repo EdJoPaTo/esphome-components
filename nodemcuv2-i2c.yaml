@@ -1,3 +1,4 @@
+# https://esphome.io/components/i2c/
 ---
 <<: !include nodemcuv2.yaml
 

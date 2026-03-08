@@ -1,4 +1,4 @@
-# see https://esphome.io/components/sensor/scd30.html
+# https://esphome.io/components/sensor/scd30.html
 # uses i2c
 ---
 platform: scd30

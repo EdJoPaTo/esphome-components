@@ -1,4 +1,4 @@
-# see https://esphome.io/components/sensor/aht10/
+# https://esphome.io/components/sensor/aht10/
 # uses i2c
 ---
 platform: aht10
