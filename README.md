@@ -8,14 +8,12 @@ See <https://esphome.io/> for documentation.
 
 ```yaml
 ---
-platform: !include nodemcuv2.yaml
+packages:
+  - !include nodemcuv2.yaml
+  - !include sensor-nodemcuv2-dht22.yaml
 
 substitutions:
   devicename: terrace
-
-sensor:
-  - !include sensor-wifi-signal.yaml
-  - !include sensor-nodemcuv2-dht22.yaml
 ```
 
 ## Sensor Filter
