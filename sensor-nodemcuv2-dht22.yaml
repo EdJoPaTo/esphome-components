@@ -16,7 +16,7 @@ humidity:
   name: Humidity
   accuracy_decimals: 2
   filters:
-    - lambda: if (x > 1.0 && x < 99.0) { return x; } else { return {}; }
+    - lambda: if (x > 2.0 && x < 98.0) { return x; } else { return {}; }
     - exponential_moving_average:
         alpha: 0.05
         send_every: 24 # 6 * 4min
