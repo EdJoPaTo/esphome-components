@@ -1,0 +1,13 @@
+# https://esp32pin.com/esp32-devkitv1
+---
+<<: !include base.yaml
+
+esp32:
+  variant: esp32
+  framework:
+    type: esp-idf
+
+status_led:
+  pin:
+    number: GPIO2
+    ignore_strapping_warning: true
