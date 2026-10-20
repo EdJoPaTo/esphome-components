@@ -1,0 +1,62 @@
+# inspired mainly by https://gist.github.com/mamoit/728e69d6c3c8906ceb5ff5a63efcd2c4/
+---
+packages:
+  - !include base.yaml
+
+esp32:
+  variant: esp32c3
+
+esphome:
+  on_boot:
+    - priority: 500
+      then:
+        # Hold level of GPIO13 through deep sleep
+        - lambda: |-
+            gpio_hold_en(GPIO_NUM_13);
+            gpio_deep_sleep_hold_en();
+
+spi:
+  clk_pin:
+    number: GPIO8
+    ignore_strapping_warning: true
+  mosi_pin: GPIO10
+  miso_pin: GPIO7
+
+binary_sensor:
+  - id: usb_power
+    name: USB Power
+    platform: gpio
+    pin:
+      number: GPIO20
+
+sensor:
+  - platform: adc
+    pin: GPIO0
+    id: battery_voltage
+    name: Battery Voltage
+    update_interval: 30s
+    attenuation: 12db
+    filters:
+      - multiply: 2
+    unit_of_measurement: V
+
+display:
+  - platform: epaper_spi
+    model: SSD1677
+    id: epd
+    update_interval: never
+    dimensions:
+      width: 800
+      height: 480
+    transform:
+      mirror_x: false
+      mirror_y: true
+    cs_pin: GPIO21
+    dc_pin: GPIO4
+    reset_pin: GPIO5
+    busy_pin:
+      number: GPIO6
+      inverted: False
+      mode:
+        input: True
+        pulldown: True
