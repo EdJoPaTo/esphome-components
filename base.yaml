@@ -62,4 +62,4 @@ sensor:
       - exponential_moving_average:
           alpha: 0.01
           send_every: 24 # 6 * 4min
-          send_first_at: 6
+          send_first_at: 3
