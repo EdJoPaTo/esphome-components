@@ -23,8 +23,10 @@ spi:
   miso_pin: GPIO7
 
 binary_sensor:
-  - id: usb_power
-    name: USB Power
+  - id: battery_state
+    name: Battery State
+    device_class: battery_charging
+    entity_category: diagnostic
     platform: gpio
     pin:
       number: GPIO20
@@ -34,11 +36,31 @@ sensor:
     pin: GPIO0
     id: battery_voltage
     name: Battery Voltage
+    entity_category: diagnostic
     update_interval: 30s
     attenuation: 12db
     filters:
       - multiply: 2
     unit_of_measurement: V
+    on_value:
+      then:
+        - component.update: battery_level
+  - platform: template
+    name: Battery Level
+    id: battery_level
+    lambda: return id(battery_voltage).state;
+    accuracy_decimals: 0
+    update_interval: never
+    device_class: battery
+    state_class: measurement
+    entity_category: diagnostic
+    unit_of_measurement: "%"
+    filters:
+      - calibrate_linear:
+          method: exact
+          datapoints:
+          - 3.4 -> 0.0
+          - 4.2 -> 100.0
 
 display:
   - platform: epaper_spi
