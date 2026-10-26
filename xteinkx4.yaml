@@ -23,8 +23,8 @@ spi:
   miso_pin: GPIO7
 
 binary_sensor:
-  - id: battery_state
-    name: Battery State
+  - id: battery_charging
+    name: Battery Charging
     device_class: battery_charging
     entity_category: diagnostic
     platform: gpio
