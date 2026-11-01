@@ -5,6 +5,7 @@ packages:
 
 esp32:
   variant: esp32c3
+  cpu_frequency: 80MHz
 
 esphome:
   on_boot:
