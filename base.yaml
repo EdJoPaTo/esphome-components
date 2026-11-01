@@ -54,6 +54,7 @@ web_server:
 
 sensor:
   - platform: wifi_signal
+    id: wifi_signal_db
     name: RSSI
     update_interval: 10s
     accuracy_decimals: 2
