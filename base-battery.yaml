@@ -1,0 +1,13 @@
+# Devices that are battery powered and usually in deep_sleep are rarely reachable, so no OTA
+---
+packages:
+  - !include base.yaml
+
+logger:
+  level: INFO
+
+# Dont tell the broker to be gone
+mqtt:
+  birth_message:
+  shutdown_message:
+  will_message:

@@ -1,0 +1,31 @@
+---
+packages:
+  - !include base.yaml
+
+captive_portal:
+wifi:
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: espHome ${devicename}
+    password: !secret hotspot_password
+
+ota:
+  - platform: web_server
+  - platform: esphome
+    password: !secret ota_password
+
+web_server:
+  port: 80
+  auth:
+    type: digest
+    username: admin
+    password: !secret web_server_password
+
+sensor:
+  - id: !extend wifi_signal_db
+    update_interval: 10s
+    filters:
+      - exponential_moving_average:
+          alpha: 0.01
+          send_every: 24 # 6 * 4min
+          send_first_at: 3

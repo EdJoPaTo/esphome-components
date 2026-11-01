@@ -1,6 +1,7 @@
 # https://esp32pin.com/esp32-devkitv1
 ---
-<<: !include base.yaml
+packages:
+  - !include base-mains.yaml
 
 esp32:
   variant: esp32
