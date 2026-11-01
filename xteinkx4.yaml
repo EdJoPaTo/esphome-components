@@ -6,6 +6,9 @@ packages:
 esp32:
   variant: esp32c3
   cpu_frequency: 80MHz
+  framework:
+    advanced:
+      flash_chip: generic
 
 esphome:
   on_boot:
