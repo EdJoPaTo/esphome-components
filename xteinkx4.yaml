@@ -61,10 +61,9 @@ sensor:
     unit_of_measurement: "%"
     filters:
       - calibrate_linear:
-          method: exact
           datapoints:
           - 3.4 -> 0.0
-          - 4.2 -> 100.0
+          - 4.1 -> 100.0
 
 display:
   - platform: epaper_spi
