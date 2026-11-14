@@ -9,6 +9,7 @@ See <https://esphome.io/> for documentation.
 ```yaml
 ---
 packages:
+  - !include base-mains.yaml
   - !include nodemcuv2.yaml
   - !include sensor-nodemcuv2-dht22.yaml
 

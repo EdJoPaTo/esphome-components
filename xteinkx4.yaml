@@ -1,8 +1,5 @@
 # inspired mainly by https://gist.github.com/mamoit/728e69d6c3c8906ceb5ff5a63efcd2c4/
 ---
-packages:
-  - !include base-battery.yaml
-
 esp32:
   variant: esp32c3
   cpu_frequency: 80MHz

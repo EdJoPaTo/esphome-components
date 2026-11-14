@@ -1,3 +1,4 @@
+# Devices that are constantly powered by mains and are not draining some battery
 ---
 packages:
   - !include base.yaml

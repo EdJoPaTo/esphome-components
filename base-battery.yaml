@@ -1,4 +1,4 @@
-# Devices that are battery powered and usually in deep_sleep are rarely reachable, so no OTA
+# Devices that are battery powered and usually in deep_sleep
 ---
 packages:
   - !include base.yaml

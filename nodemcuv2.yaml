@@ -1,7 +1,4 @@
 ---
-packages:
-  - !include base-mains.yaml
-
 esp8266:
   board: nodemcuv2
 
