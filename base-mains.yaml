@@ -10,6 +10,11 @@ wifi:
     ssid: espHome ${devicename}
     password: !secret hotspot_password
 
+mqtt:
+  # Prefer less state when not needed for power reasons
+  clean_session: true
+  persist_subscriptions: false
+
 ota:
   - platform: web_server
   - platform: esphome

@@ -27,7 +27,9 @@ mqtt:
   broker: !secret mqtt_broker
   username: !secret mqtt_username
   password: !secret mqtt_password
+  clean_session: false
   discovery_unique_id_generator: mac
+  persist_subscriptions: true
   use_abbreviations: false
   topic_prefix: espHome-${devicename}
   log_topic:
