@@ -11,3 +11,6 @@ mqtt:
 
 # as base is applied first, then boards, it likely doesnt work but it reminds of removing it later on
 status_led: !remove
+
+deep_sleep:
+  id: deep_sleep_1
