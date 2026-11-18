@@ -8,3 +8,6 @@ mqtt:
   birth_message:
   shutdown_message:
   will_message:
+
+# as base is applied first, then boards, it likely doesnt work but it reminds of removing it later on
+status_led: !remove
