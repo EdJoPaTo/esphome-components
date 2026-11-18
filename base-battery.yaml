@@ -3,9 +3,6 @@
 packages:
   - !include base.yaml
 
-logger:
-  level: INFO
-
 # Dont tell the broker to be gone
 mqtt:
   birth_message:

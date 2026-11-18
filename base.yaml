@@ -5,8 +5,8 @@ esphome:
 # Enable logging
 logger:
   # See https://esphome.io/components/logger/#log-levels
-  # level: DEBUG # default
-  # level: INFO # use for battery operated or timing critical devices
+  # level: DEBUG # default, use for experimenting with new components
+  level: INFO # hide more sensitive details, useful for battery operated or timing critical devices
   # level: VERBOSE # use to understand problems?
 
 network:
