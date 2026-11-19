@@ -9,8 +9,20 @@ mqtt:
   shutdown_message:
   will_message:
 
-# as base is applied first, then boards, it likely doesnt work but it reminds of removing it later on
-status_led: !remove
+  on_message:
+    - topic: espHome-${devicename}/ota_mode
+      payload: 'ON'
+      then:
+        - deep_sleep.prevent: deep_sleep_1
+    - topic: espHome-${devicename}/sleep
+      payload: 'now'
+      then:
+        - deep_sleep.enter:
+            id: deep_sleep_1
+            sleep_duration: 30s
 
 deep_sleep:
   id: deep_sleep_1
+
+# as base is applied first, then boards, it likely doesnt work but it reminds of removing it later on
+status_led: !remove
