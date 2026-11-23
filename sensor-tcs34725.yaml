@@ -1,6 +1,7 @@
 ---
 sensor:
-  - platform: tcs34725
+  - id: sensor_tcs34725
+    platform: tcs34725
     update_interval: 5s
     illuminance:
       name: Illuminance

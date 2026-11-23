@@ -1,7 +1,7 @@
 ---
 sensor:
-  - platform: dht
-    id: nodemcuv2_dht22
+  - id: nodemcuv2_dht22
+    platform: dht
     pin: D6
     model: DHT22
     update_interval: 10s

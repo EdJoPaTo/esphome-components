@@ -2,7 +2,8 @@
 # uses i2c
 ---
 sensor:
-  - platform: scd30
+  - id: sensor_scd30
+    platform: scd30
     update_interval: 30s
     co2:
       name: CO2

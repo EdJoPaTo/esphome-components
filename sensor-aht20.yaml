@@ -2,7 +2,8 @@
 # uses i2c
 ---
 sensor:
-  - platform: aht10
+  - id: sensor_aht20
+    platform: aht10
     variant: AHT20
     update_interval: 10s
     temperature:
