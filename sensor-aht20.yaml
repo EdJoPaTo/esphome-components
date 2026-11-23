@@ -22,3 +22,4 @@ sensor:
             alpha: 0.05
             send_every: 24 # 6 * 4min
             send_first_at: 6
+        - lambda: if (x > 2.0 && x < 98.0) { return x; } else { return {}; }
